@@ -39,4 +39,5 @@ Access to your drupal site
 ## MySQL information
 
 MySQL Database name : drupal
+
 MySQL User : drupal / drupal
