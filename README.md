@@ -35,3 +35,8 @@ You are now ready to go!
 
 Access to your drupal site
 [http://vagrant.local](http://vagrant.local)
+
+## MySQL information
+
+MySQL Database name : drupal
+MySQL User : drupal / drupal
