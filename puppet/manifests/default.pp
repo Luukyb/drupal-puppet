@@ -1,3 +1,11 @@
+class { 'apt':
+  always_apt_update    => false,
+  proxy_host           => false,
+  purge_sources_list   => false,
+  purge_sources_list_d => false,
+  purge_preferences_d  => false
+}
+
 # Installs default Apache modules based on lucid
 class { 'apache':
   default_mods => true,
