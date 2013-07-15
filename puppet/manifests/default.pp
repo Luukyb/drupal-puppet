@@ -15,9 +15,14 @@ class { 'apache':
 # TODO: https://drupal.org/requirements/php
 include apache::mod::php
 
+apache::mod { 'rewrite': }
+
+# Clean URL requirements 
+# @see https://drupal.org/node/15365
 apache::vhost { 'vagrant.local':
-  port    => '80',
   docroot => '/var/www/drupal-project',
+  port    => '80',
+  rewrite_base => '/',
 }
 
 class { 'mysql::server':
@@ -31,6 +36,8 @@ mysql::db { 'drupal':
 }
 
 include php
+
+include development
 
 # Symlink in /var/www
 file { '/var/www/drupal-project':

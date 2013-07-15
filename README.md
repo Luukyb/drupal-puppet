@@ -1,9 +1,9 @@
 # drupal-puppet
 
-A simple and understandable Drupal &amp; LAMP stack, based on ubuntu with Vagrant and Puppet.
+A complete, simple and understandable Drupal &amp; LAMP stack, based on ubuntu with Vagrant and Puppet.
 
 This is a simple version of a LAMP stack, quickly optimized for Drupal.
-It does include : Apache, MySQL, PHP and Drush.
+It does include : Apache, MySQL, PHP, Drush and Sass / Compass.
 
 Puppet is using modules from puppet labs for Apache and MySQL.
 [https://github.com/puppetlabs/puppetlabs-apache](https://github.com/puppetlabs/puppetlabs-apache)
