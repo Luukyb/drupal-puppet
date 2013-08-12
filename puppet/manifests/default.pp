@@ -21,9 +21,25 @@ apache::mod { 'rewrite': }
 # @see https://drupal.org/node/15365
 apache::vhost { 'vagrant.local':
   docroot => '/var/www/drupal-project',
+  #options => 'Indexes', 'MultiViews', 'FollowSymLinks',
+  directories => [ { path => '/var/www/drupal-project', allow_override => ['All'] }],
+  #directories => [ { path => '/var/www/drupal-project, allow_override => ['AuthConfig', 'Indexes'] } ],
   port    => '80',
   rewrite_base => '/',
+  # rewrite_cond => [ '%{REQUEST_FILENAME} !-f', '%{REQUEST_FILENAME} !-d'],
+  # rewrite_rule => '^(.*)$ index.php?q=$1 [L,QSA]',
 }
+
+#class webserver {
+  # Setups the virtual host
+#  file { '/etc/apache2/sites-enabled/site.conf':
+#    source  => '/vagrant/puppet/config/site.conf',
+#    notify  => Service['apache2'],
+#    require => Package['apache2'],
+#  }
+#}
+
+#include webserver
 
 class { 'mysql::server':
   config_hash => { 'root_password' => 'root' }
